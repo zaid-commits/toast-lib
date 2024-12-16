@@ -5,7 +5,6 @@ import { Button } from './components/ui/button';
 const App = () => {
   const { addToast } = useToast();
 
-
   const showSuccessToast = () => {
     addToast('This is a success message!', 'success');
   };
@@ -22,6 +21,14 @@ const App = () => {
     addToast('This is an info message!', 'info');
   };
 
+  const showNotificationToast = () => {
+    addToast('This is a notification message!', 'notification');
+  };
+
+  const showFavoriteToast = () => {
+    addToast('This is a favorite message!', 'favorite');
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <header className="text-black p-4 flex justify-between items-center">
@@ -30,10 +37,12 @@ const App = () => {
       <main className="flex-grow p-4">
         <div className="space-y-4 align-center">
           <div className='space-x-4'>
-          <Button variant={'outline'} onClick={showSuccessToast}>Show Success Toast</Button>
-          <Button variant={'outline'} onClick={showErrorToast}>Show Error Toast</Button>
-          <Button variant={'outline'} onClick={showWarningToast}>Show Warning Toast</Button>
-          <Button variant={'outline'} onClick={showInfoToast}>Show Info Toast</Button>
+            <Button variant={'outline'} onClick={showSuccessToast}>Show Success Toast</Button>
+            <Button variant={'outline'} onClick={showErrorToast}>Show Error Toast</Button>
+            <Button variant={'outline'} onClick={showWarningToast}>Show Warning Toast</Button>
+            <Button variant={'outline'} onClick={showInfoToast}>Show Info Toast</Button>
+            <Button variant={'outline'} onClick={showNotificationToast}>Show Notification Toast</Button>
+            <Button variant={'outline'} onClick={showFavoriteToast}>Show Favorite Toast</Button>
           </div>
         </div>
       </main>

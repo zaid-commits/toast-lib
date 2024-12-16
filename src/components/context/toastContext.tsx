@@ -3,7 +3,7 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 import Toast from '../ui/toast';
 
 interface ToastContextProps {
-  addToast: (message: string, variant?: 'success' | 'error' | 'warning' | 'info', duration?: number) => void;
+  addToast: (message: string, variant?: 'success' | 'error' | 'warning' | 'info' | 'notification' | 'favorite', duration?: number) => void;
 }
 
 const ToastContext = createContext<ToastContextProps | undefined>(undefined);
@@ -17,9 +17,9 @@ export const useToast = () => {
 };
 
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
-  const [toasts, setToasts] = useState<{ id: number; message: string; variant?: 'success' | 'error' | 'warning' | 'info'; duration?: number }[]>([]);
+  const [toasts, setToasts] = useState<{ id: number; message: string; variant?: 'success' | 'error' | 'warning' | 'info' | 'notification' | 'favorite'; duration?: number }[]>([]);
 
-  const addToast = (message: string, variant: 'success' | 'error' | 'warning' | 'info' = 'info', duration?: number) => {
+  const addToast = (message: string, variant: 'success' | 'error' | 'warning' | 'info' | 'notification' | 'favorite' = 'info', duration?: number) => {
     const id = Date.now();
     setToasts((prev) => [...prev, { id, message, variant, duration }]);
     setTimeout(() => {
