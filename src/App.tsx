@@ -28,11 +28,13 @@ const App = () => {
         <h1 className="text-2xl">Toast Library <a className='text-red-800' href="https://zedfr.me">Zed</a></h1>
       </header>
       <main className="flex-grow p-4">
-        <div className="space-y-4">
+        <div className="space-y-4 align-center">
+          <div className='space-x-4'>
           <Button variant={'outline'} onClick={showSuccessToast}>Show Success Toast</Button>
           <Button variant={'outline'} onClick={showErrorToast}>Show Error Toast</Button>
           <Button variant={'outline'} onClick={showWarningToast}>Show Warning Toast</Button>
           <Button variant={'outline'} onClick={showInfoToast}>Show Info Toast</Button>
+          </div>
         </div>
       </main>
     </div>
